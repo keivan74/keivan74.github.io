@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keivan Kalantari | Engineering Experience</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      background:
+        radial-gradient(circle at 20% 20%, #243b55 0%, transparent 35%),
+        radial-gradient(circle at 80% 80%, #141e30 0%, transparent 40%),
+        linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      min-height: 650px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 50px;
+    }
+
+    .header {
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 42px;
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .header p {
+      font-size: 19px;
+      color: #d7e3ea;
+      margin: 0;
+    }
+
+    .content {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .chat-area {
+      flex: 1;
+    }
+
+    .chat-area h2 {
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .chat-box {
+      display: flex;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 15px;
+      padding: 8px;
+      backdrop-filter: blur(10px);
+    }
+
+    .chat-box input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 17px;
+      padding: 15px;
+    }
+
+    .chat-box input::placeholder {
+      color: #c7d2d9;
+    }
+
+    .chat-box button {
+      border: none;
+      border-radius: 10px;
+      padding: 0 22px;
+      background: white;
+      color: #203a43;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .image-area {
+      width: 360px;
+      height: 300px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #c7d2d9;
+    }
+
+    .footer {
+      text-align: center;
+      color: #aebdc5;
+      font-size: 13px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      .content {
+        flex-direction: column;
+      }
+
+      .image-area {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <h1>Keivan Kalantari</h1>
+      <p>Ask me anything about my engineering experience.</p>
+    </div>
+
+    <div class="content">
+
+      <div class="chat-area">
+        <h2>What would you like to know?</h2>
+
+        <div class="chat-box">
+          <input
+            type="text"
+            placeholder="Ask about my experience, projects, expertise..."
+          >
+          <button>Ask</button>
+        </div>
+      </div>
+
+      <div class="image-area">
+        <div>
+          <p>Dynamic image area</p>
+          <p>Your image will appear here.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      AI-powered professional portfolio
+    </div>
+
+  </div>
+
+</body>
+</html>
