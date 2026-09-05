@@ -213,8 +213,7 @@
                 throw new Error(data.error || "Something went wrong.");
             }
 
-            answerBox.textContent = data.answer || "No answer received.";
-
+            answerBox.innerHTML = data.answer || "No answer received.";
         } catch (error) {
             answerBox.textContent =
                 "Sorry, I couldn't connect to the AI assistant.";
