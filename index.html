@@ -132,6 +132,11 @@
       font-weight: 700;
     }
 
+    .question-history {
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
     .image-area {
       width: 360px;
       height: 300px;
@@ -291,7 +296,28 @@
         return;
       }
 
-      answerBox.textContent = "Thinking...";
+      // Escape the user's question before displaying it.
+      const safeQuestion = question.replace(/[&<>"']/g, function(char) {
+        const entities = {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;"
+        };
+
+        return entities[char];
+      });
+
+      // Immediately display the question and clear the input box.
+      answerBox.innerHTML = `
+        <div class="question-history">
+          You: ${safeQuestion}
+        </div>
+        <p>Thinking...</p>
+      `;
+
+      questionInput.value = "";
 
       try {
 
@@ -316,14 +342,24 @@
           );
         }
 
-        answerBox.innerHTML = formatAnswer(
-          data.answer || "No answer received."
-        );
+        // Keep the question and place the AI answer underneath it.
+        answerBox.innerHTML = `
+          <div class="question-history">
+            You: ${safeQuestion}
+          </div>
+          ${formatAnswer(
+            data.answer || "No answer received."
+          )}
+        `;
 
       } catch (error) {
 
-        answerBox.textContent =
-          "Sorry, I couldn't connect to the AI assistant.";
+        answerBox.innerHTML = `
+          <div class="question-history">
+            You: ${safeQuestion}
+          </div>
+          <p>Sorry, I couldn't connect to the AI assistant.</p>
+        `;
 
         console.error(error);
       }
